@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioCare Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        /* Updated: Using a placeholder image for the hero background */
+        
+        .hero-bg {
+            background-image: url("B.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .mySlides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .mySlides.active {
+            opacity: 1;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        /* Style for the hamburger menu icon */
+        
+        .hamburger-icon span {
+            display: block;
+            height: 3px;
+            width: 25px;
+            background: #000;
+            margin-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .hamburger-icon.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-icon.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+    <header class="bg-white shadow-lg fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-blue-600">PhysioCare</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#booking" class="text-gray-600 hover:text-blue-600 transition duration-300">Book Now</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                <a href="https://wa.me/263772435210" target="_blank" class="bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-105">
+                    Chat on WhatsApp
+                </a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none">
+                <div class="hamburger-icon" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full shadow-lg">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="#about" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">About Us</a>
+                <a href="#services" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Services</a>
+                <a href="#booking" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Book Now</a>
+                <a href="#contact" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Contact</a>
+                <a href="https://wa.me/263772435210" target="_blank" class="block text-center bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-green-600 transition duration-300">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white relative">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative p-6 max-w-2xl mx-auto">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">Your Path to Pain-Free Movement</h1>
+                <p class="text-lg sm:text-xl mb-8 font-light">
+                    Providing expert, compassionate care for musculoskeletal, neurological, and cardiovascular conditions.
+                </p>
+                <a href="#booking" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    Book an Appointment
+                </a>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Specialized Services</h2>
+
+                <div class="slideshow-container rounded-lg shadow-xl">
+                    <!-- Updated: Using placeholder images for slideshow backgrounds -->
+                    <div class="mySlides active" style="background-image: url('A.jpg');">
+                        <div class="slide-overlay">
+                            <div class="text-white max-w-xl mx-auto">
+                                <h3 class="text-3xl font-bold mb-4">Cardiovascular Physiotherapy</h3>
+                                <p class="text-lg font-light">
+                                    This is the prevention, rehabilitation and comansation of individuals with diseases and injuries in the heart and lungs. These conditions may manifest as shortness of breath, persistent coughing, increased breathing rate or a decrese in breathing rate.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlides" style="background-image: url('D.jpg');">
+                        <div class="slide-overlay">
+                            <div class="text-white max-w-xl mx-auto">
+                                <h3 class="text-3xl font-bold mb-4">Neuromuscular Physiotherapy</h3>
+                                <p class="text-lg font-light">
+                                    This a specialised area in Physiotherapy focusing on treating individuals with neurological conditions. These affect the functions of the brain, spinal cord and nerves.Stroke, Mulitiple Sclerosis, Spinal Cord Injury and Parkinson's being the common nuerological
+                                    conditions. We as specialist are trained to handle such cases with the main aim being to aid the individual in regaining maximum movement and functional independence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlides" style="background-image: url('I.jpg');">
+                        <div class="slide-overlay">
+                            <div class="text-white max-w-xl mx-auto">
+                                <h3 class="text-3xl font-bold mb-4">Respiratory Physiotherapy</h3>
+                                <p class="text-lg font-light">
+                                    This is the the improvment of ones breathing by inirect removal of mucus from ones breathing passages. This is perfomed on people suffering from mucus dysfunction in respiratory disease conditions like asthma, chronic obstructive pulmonary disease, bronchtis,
+                                    bronchiectasis and cystic fibrosis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlides" style="background-image: url('H.jpg');">
+                        <div class="slide-overlay">
+                            <div class="text-white max-w-xl mx-auto">
+                                <h3 class="text-3xl font-bold mb-4">Physiotherapy in Neuromusculoskeletal</h3>
+                                <p class="text-lg font-light">
+                                    This is the treatment of bones and muscles (especially spinal pain in the lower back)by employing advanced clinical assesment and diagnosis methods. We are here to aid those who may expirience lower back, neck pain and joint problems, we even eduate our
+                                    patients to prevent such future problems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mySlides" style="background-image: url('C.jpg');">
+                        <div class="slide-overlay">
+                            <div class="text-white max-w-xl mx-auto">
+                                <h3 class="text-3xl font-bold mb-4">Acupuncture</h3>
+                                <p class="text-lg font-light">
+                                    We provide targeted therapy for pain management. In chronic pain conditions like low back pain, osteoarthritis and neck pain, it the release of endorphins and other neurochemicals that reduce pain perception.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">About Our Clinic</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                    PhysioCare is dedicated to helping you achieve optimal physical health and well-being. Our team of experienced physiotherapists offers personalized treatment plans tailored to your specific needs. We work in corperation with HealthPoint and St Wilfred's
+                    Medical Center.
+                </p>
+                <div class="flex flex-wrap items-center">
+                    <div class="w-full lg:w-1/2 p-4">
+                        <!-- Updated: Using a placeholder image for the about section -->
+                        <img src="G.jpg" alt="Physiotherapy treatment" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="w-full lg:w-1/2 p-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Approach</h3>
+                        <p class="text-gray-600 mb-4">
+                            We believe in a holistic and patient-centered approach. By combining evidence-based techniques with state-of-the-art equipment, we address the root cause of your pain and functional limitations, not just the symptoms.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Manual Therapy and Exercise Prescription</li>
+                            <li>Electrotherapy and Dry Needling</li>
+                            <li>Sports Injury Rehabilitation</li>
+                            <li>Post-operative Care</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4">Book Your Appointment</h2>
+                <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">
+                    Please fill out the form below to request an appointment. We will get back to you to confirm your booking.
+                </p>
+
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                    <div id="message-box" class="hidden mb-4 p-4 rounded-lg text-sm text-center font-semibold"></div>
+
+                    <form id="appointment-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="appointment-date" class="block text-sm font-medium text-gray-700">Preferred Date</label>
+                                <input type="date" id="appointment-date" name="appointment-date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2">
+                            </div>
+                            <div>
+                                <label for="appointment-time" class="block text-sm font-medium text-gray-700">Preferred Time</label>
+                                <input type="time" id="appointment-time" name="appointment-time" required min="08:00" max="16:30" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2">
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                Request Appointment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4">Find Us</h2>
+                <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">
+                    Visit our clinic. We are conveniently located and ready to assist you.
+                </p>
+                <div class="flex flex-wrap lg:flex-nowrap gap-8">
+                    <div class="w-full lg:w-1/2 rounded-lg overflow-hidden shadow-xl">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.207551061214!2d31.042571275990236!3d-17.80806497554378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4f001155555%3A0x63351d6c82737604!2s18+Lanark+Rd%2C+Avondale%2C+Harare%2C+Zimbabwe!5e0!3m2!1sen!2sza!4v1689623838234!5m2!1sen!2sza"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="w-full lg:w-1/2 bg-white text-gray-800 p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                        <p class="mb-4">
+                            <strong class="text-blue-600">Address:</strong> 18 Lanark Road, Avondale, Harare, Zimbabwe
+                        </p>
+                        <p class="mb-4">
+                            <strong class="text-blue-600">Cell:</strong> <a href="tel:+263789194352" class="text-blue-600 hover:underline">+263 789 194 352</a>
+                        </p>
+                        <p class="mb-4">
+                            <strong class="text-blue-600">Landline:</strong> <a href="tel:+263242721223" class="text-blue-600 hover:underline">+263 242 721 223</a>
+                        </p>
+                        <p class="mb-4">
+                            <strong class="text-blue-600">Email:</strong> <a href="mailto:physiopahla@gmail.com" class="text-blue-600 hover:underline">physiopahla@gmail.com</a>
+                        </p>
+                        <p class="mb-4">
+                            <strong class="text-blue-600">Business Hours:</strong><br> Monday - Friday: 8:00 - 16:30<br> Saturday: 8:00 - 12:00<br> Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2030 PhysioCare Clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('appointment-form');
+            const dateInput = document.getElementById('appointment-date');
+            const timeInput = document.getElementById('appointment-time');
+            const messageBox = document.getElementById('message-box');
+
+            // --- Booking Form Logic ---
+            // Set the minimum date to today
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = (today.getMonth() + 1).toString().padStart(2, '0');
+            const day = today.getDate().toString().padStart(2, '0');
+            dateInput.min = `${year}-${month}-${day}`;
+
+            // List of Zimbabwean National Holidays (YYYY-MM-DD format)
+            // This list needs to be updated annually.
+            const zimbabweanHolidays = [
+                '2025-01-01', // New Year's Day
+                '2025-02-21', // Robert Gabriel Mugabe National Youth Day
+                '2025-04-18', // Independence Day
+                '2025-05-01', // Workers' Day
+                '2025-05-25', // Africa Day
+                '2025-08-11', // Heroes' Day
+                '2025-08-12', // Defence Forces Day
+                '2025-12-22', // Unity Day
+                '2025-12-25', // Christmas Day
+                '2025-12-26' // Boxing Day
+            ];
+
+            // Function to show a message to the user
+            const showMessage = (message, isError = false) => {
+                messageBox.textContent = message;
+                messageBox.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700', 'bg-yellow-100', 'text-yellow-700');
+                if (isError) {
+                    messageBox.classList.add('bg-red-100', 'text-red-700');
+                } else {
+                    messageBox.classList.add('bg-yellow-100', 'text-yellow-700');
+                }
+            };
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                messageBox.classList.add('hidden');
+
+                const selectedDate = new Date(dateInput.value);
+                const selectedDay = selectedDate.getUTCDay(); // 0 for Sunday, 1 for Monday, etc.
+                const selectedTime = timeInput.value;
+
+                // 1. Check for Sundays
+                if (selectedDay === 0) {
+                    showMessage('Appointments are not available on Sundays.', true);
+                    return;
+                }
+
+                // 2. Check for Zimbabwean National Holidays
+                const formattedDate = dateInput.value;
+                if (zimbabweanHolidays.includes(formattedDate)) {
+                    showMessage('Appointments are not available on national holidays.', true);
+                    return;
+                }
+
+                // 3. Check for business hours
+                const [hour, minute] = selectedTime.split(':').map(Number);
+                const isWithinHours = (hour > 8 || (hour === 8 && minute >= 0)) && (hour < 16 || (hour === 16 && minute <= 30));
+
+                if (!isWithinHours) {
+                    showMessage('Please select an appointment time between 8:00 and 16:30.', true);
+                    return;
+                }
+
+                // --- THIS IS THE KEY CHANGE ---
+                // The following message explains the server-side requirement
+                showMessage('Your appointment request has been submitted. Please note, a server-side system is required to check for confirmed bookings and prevent double-booking. A team member will contact you shortly to confirm your appointment.', false);
+                form.reset();
+            });
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('open');
+            });
+
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('open');
+                });
+            });
+
+            // --- Slideshow Logic ---
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.mySlides');
+
+            function showSlides() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                slides[slideIndex - 1].classList.add('active');
+            }
+
+            // Initial call and set interval for slideshow
+            showSlides();
+            setInterval(showSlides, 10000); // Change image every 10 seconds
+        });
+    </script>
+</body>
+
+</html>
+
+>
